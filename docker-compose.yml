@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0         # Use MySQL 8.0 image
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password    # Set the root password
+      MYSQL_DATABASE: my_database           # Name of the default database
+      MYSQL_USER: user                      # Create a new user
+      MYSQL_PASSWORD: user_password         # Set the password for the new user
+    ports:
+      - "3306:3306"         # Expose MySQL port to host
+    volumes:
+      - db_data:/var/lib/mysql   # Persist data
+  
+  adminer:
+    image: adminer            # Use the Adminer image
+    container_name: adminer
+    ports:
+      - "8080:8080"           # Expose Adminer on port 8080
+
+volumes:
+  db_data:                     # Volume for persisting MySQL data
