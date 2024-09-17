@@ -16,13 +16,13 @@ import { MailModule } from './mail/mail.module';
       username: 'root',
       password: 'root_password',
       database: 'my_database',
-      entities: [User],  // Add your entities here
+      entities: [User], // Add your entities here
       synchronize: true, // For development; disable in production
       autoLoadEntities: true,
-      subscribers : [UserSubscriber]
+      subscribers: [UserSubscriber],
     }),
     UserModule,
-    MailModule, 
+    MailModule,
   ],
   controllers: [AppController],
   providers: [AppService],

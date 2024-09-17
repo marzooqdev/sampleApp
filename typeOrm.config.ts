@@ -1,6 +1,5 @@
 import { DataSource } from 'typeorm';
 import { User } from './src/entities/User.entity';
-import { UserSubscriber } from 'src/user/user.subscriber';
 
 
 export default new DataSource({
@@ -14,3 +13,4 @@ export default new DataSource({
   entities: [User],
   subscribers: [],
 });
+ 

@@ -1,4 +1,5 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import { UserRole } from '../src/enums/user.enum';
 
 export class AddUserTable1726137264741 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -29,8 +30,8 @@ export class AddUserTable1726137264741 implements MigrationInterface {
           {
             name: 'role',
             type: 'enum',
-            enum: ["user", "manager", "admin"],
-            default: `'user'`,
+            enum: [UserRole.USER, UserRole.MANAGER, UserRole.ADMIN],
+            default: `'${UserRole.USER}'`,
           },
         ],
       }),

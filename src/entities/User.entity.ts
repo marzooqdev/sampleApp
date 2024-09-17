@@ -1,6 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, AfterInsert, BeforeInsert } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 import { UserRole } from '../enums/user.enum';
-import { Logger } from '@nestjs/common';
 
 @Entity('users')
 export class User {
