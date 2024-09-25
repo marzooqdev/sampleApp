@@ -6,6 +6,11 @@ import { User } from './entities/User.entity';
 import { UserModule } from './user/user.module';
 import { UserSubscriber } from './user/user.subscriber';
 import { MailModule } from './mail/mail.module';
+import { FilterModule } from './filter/filter.module';
+import { ClientModule } from './client/client.module';
+import { AccountingModule } from './accounting/accounting.module';
+import { BusinessModule } from './business/business.module';
+import { HealthcareModule } from './healthcare/healthcare.module';
 
 @Module({
   imports: [
@@ -23,6 +28,11 @@ import { MailModule } from './mail/mail.module';
     }),
     UserModule,
     MailModule,
+    FilterModule,
+    ClientModule,
+    AccountingModule,
+    BusinessModule,
+    HealthcareModule,
   ],
   controllers: [AppController],
   providers: [AppService],
